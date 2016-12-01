@@ -1,8 +1,13 @@
 {
-  "name": "docebo-windows-updater",
+  "name": "code-and-migrations-updater",
   "version": "1.0.0",
   "license": "MIT",
   "private": true,
+  "author": "stefkoff",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Stefkoff/code-and-migrations-updater.git"
+  },
   "dependencies": {
       "node-cron": "1.1.2"
   }
