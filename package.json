@@ -1,0 +1,9 @@
+{
+  "name": "docebo-windows-updater",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+      "node-cron": "1.1.2"
+  }
+}
