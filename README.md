@@ -14,3 +14,5 @@ If you are not using the config file, you should use ARGS as can be one or all o
  
  *Example*
  node updater.js legacy=C:\www\test1 domain=my.stefkoff.com hydra=C:\www\hydra frontend="D:\frontend"
+
+ Fill free to update/fix the code
