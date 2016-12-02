@@ -64,18 +64,25 @@ if(fs.existsSync('config.js') && fs.lstatSync('config.js').isFile()){
 
 //Run ONLY if we specify a domain name
 if(domainName){
+    var doJob = function(){
+	    if(legacyCode){
+		    legacyCodeUpdater(legacyCode, domainName);
+	    }
+
+	    if(hydraCode){
+		    hydraCodeUpdater(hydraCode, domainName);
+	    }
+	    if(frontendCode){
+		    frontendCodeUpdater(frontendCode);
+	    }
+    };
+
+    // Run the job immediately
+	doJob();
+
     //Create a "cron job" task
     cron.schedule('*/' + updateInterval + ' * * * *', function(){
-        if(legacyCode){
-            legacyCodeUpdater(legacyCode, domainName);
-        }
-
-        if(hydraCode){
-            hydraCodeUpdater(hydraCode, domainName);
-        }
-        if(frontendCode){
-            frontendCodeUpdater(frontendCode);
-        }
+	    doJob();
     });
 } else{
     console.log('No domain name given!');
